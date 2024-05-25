@@ -1,0 +1,3011 @@
+{
+  "last_node_id": 1116,
+  "last_link_id": 1849,
+  "nodes": [
+    {
+      "id": 529,
+      "type": "GetImageSize+",
+      "pos": [
+        -6837.223017960602,
+        1181.0887697221267
+      ],
+      "size": {
+        "0": 210,
+        "1": 46
+      },
+      "flags": {},
+      "order": 21,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 1530
+        }
+      ],
+      "outputs": [
+        {
+          "name": "width",
+          "type": "INT",
+          "links": [
+            871
+          ],
+          "shape": 3,
+          "slot_index": 0
+        },
+        {
+          "name": "height",
+          "type": "INT",
+          "links": [
+            872
+          ],
+          "shape": 3,
+          "slot_index": 1
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "GetImageSize+"
+      }
+    },
+    {
+      "id": 27,
+      "type": "vhs_audio_to_audio_tensor",
+      "pos": [
+        -7600.1983555191255,
+        -491.89309959092043
+      ],
+      "size": {
+        "0": 315,
+        "1": 102
+      },
+      "flags": {},
+      "order": 14,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "vhs_audio",
+          "type": "VHS_AUDIO",
+          "link": 45,
+          "slot_index": 0,
+          "label": "vhs_audio"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "audio_tensor",
+          "type": "VCAUDIOTENSOR",
+          "links": [
+            67
+          ],
+          "shape": 3,
+          "slot_index": 0,
+          "label": "audio_tensor"
+        },
+        {
+          "name": "audio_dur",
+          "type": "INT",
+          "links": null,
+          "shape": 3,
+          "label": "audio_dur"
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "vhs_audio_to_audio_tensor"
+      },
+      "widgets_values": [
+        16000,
+        1
+      ]
+    },
+    {
+      "id": 223,
+      "type": "SetNode",
+      "pos": [
+        -6827.198355519126,
+        -760.8930995909205
+      ],
+      "size": {
+        "0": 235.1999969482422,
+        "1": 58
+      },
+      "flags": {},
+      "order": 26,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "INT",
+          "type": "INT",
+          "link": 422
+        }
+      ],
+      "outputs": [
+        {
+          "name": "*",
+          "type": "*",
+          "links": null
+        }
+      ],
+      "title": "Set_output_video_frame_count",
+      "properties": {
+        "previousName": "output_video_frame_count"
+      },
+      "widgets_values": [
+        "output_video_frame_count"
+      ]
+    },
+    {
+      "id": 125,
+      "type": "GetNode",
+      "pos": [
+        -4474.410906003187,
+        -641.4087271741254
+      ],
+      "size": {
+        "0": 210,
+        "1": 58
+      },
+      "flags": {
+        "collapsed": false
+      },
+      "order": 0,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "VHS_AUDIO",
+          "type": "VHS_AUDIO",
+          "links": [
+            1380
+          ],
+          "slot_index": 0,
+          "label": "VHS_AUDIO"
+        }
+      ],
+      "title": "Get_audio",
+      "properties": {},
+      "widgets_values": [
+        "audio"
+      ]
+    },
+    {
+      "id": 224,
+      "type": "GetNode",
+      "pos": [
+        -8757,
+        874
+      ],
+      "size": {
+        "0": 285.89874267578125,
+        "1": 97.85186767578125
+      },
+      "flags": {},
+      "order": 1,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "INT",
+          "type": "INT",
+          "links": [
+            1761
+          ],
+          "slot_index": 0
+        }
+      ],
+      "title": "Get_output_video_frame_count",
+      "properties": {},
+      "widgets_values": [
+        "output_video_frame_count"
+      ]
+    },
+    {
+      "id": 527,
+      "type": "PixelPerfectResolution",
+      "pos": [
+        -6777.911213012693,
+        1385.9297019486887
+      ],
+      "size": {
+        "0": 393,
+        "1": 106
+      },
+      "flags": {},
+      "order": 27,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "original_image",
+          "type": "IMAGE",
+          "link": 1531,
+          "label": "original_image"
+        },
+        {
+          "name": "image_gen_width",
+          "type": "INT",
+          "link": 871,
+          "widget": {
+            "name": "image_gen_width"
+          },
+          "slot_index": 1
+        },
+        {
+          "name": "image_gen_height",
+          "type": "INT",
+          "link": 872,
+          "widget": {
+            "name": "image_gen_height"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "RESOLUTION (INT)",
+          "type": "INT",
+          "links": [
+            873
+          ],
+          "shape": 3,
+          "label": "RESOLUTION (INT)",
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "PixelPerfectResolution"
+      },
+      "widgets_values": [
+        800,
+        536,
+        "Just Resize"
+      ]
+    },
+    {
+      "id": 36,
+      "type": "whisper_to_features",
+      "pos": [
+        -7224.752500484394,
+        -626.0040445507748
+      ],
+      "size": {
+        "0": 342.5999755859375,
+        "1": 78
+      },
+      "flags": {},
+      "order": 20,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "audio_tensor",
+          "type": "VCAUDIOTENSOR",
+          "link": 67,
+          "slot_index": 0,
+          "label": "audio_tensor"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "whisper_chunks",
+          "type": "WHISPERFEAT",
+          "links": [
+            281
+          ],
+          "shape": 3,
+          "slot_index": 0,
+          "label": "whisper_chunks"
+        },
+        {
+          "name": "frame_count",
+          "type": "INT",
+          "links": [
+            297,
+            422
+          ],
+          "shape": 3,
+          "slot_index": 1,
+          "label": "frame_count"
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "whisper_to_features"
+      },
+      "widgets_values": [
+        25
+      ]
+    },
+    {
+      "id": 526,
+      "type": "DWPreprocessor",
+      "pos": [
+        -6370.911213012693,
+        1083.9297019486887
+      ],
+      "size": {
+        "0": 315,
+        "1": 198
+      },
+      "flags": {},
+      "order": 30,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 1529
+        },
+        {
+          "name": "resolution",
+          "type": "INT",
+          "link": 873,
+          "widget": {
+            "name": "resolution"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [],
+          "shape": 3,
+          "slot_index": 0
+        },
+        {
+          "name": "POSE_KEYPOINT",
+          "type": "POSE_KEYPOINT",
+          "links": [
+            1776
+          ],
+          "shape": 3,
+          "slot_index": 1
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "DWPreprocessor"
+      },
+      "widgets_values": [
+        "disable",
+        "disable",
+        "enable",
+        512,
+        "yolox_l.torchscript.pt",
+        "dw-ll_ucoco_384_bs5.torchscript.pt"
+      ]
+    },
+    {
+      "id": 1083,
+      "type": "Reroute",
+      "pos": [
+        -6032.854807912913,
+        -332.51994679218205
+      ],
+      "size": [
+        75,
+        26
+      ],
+      "flags": {},
+      "order": 38,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "",
+          "type": "*",
+          "link": 1790
+        }
+      ],
+      "outputs": [
+        {
+          "name": "",
+          "type": "IMAGE",
+          "links": [
+            1786
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "showOutputText": false,
+        "horizontal": false
+      }
+    },
+    {
+      "id": 16,
+      "type": "ImageCompositeMasked",
+      "pos": [
+        -5506.854807912913,
+        -418.519946792182
+      ],
+      "size": {
+        "0": 291.8965759277344,
+        "1": 146
+      },
+      "flags": {},
+      "order": 39,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "destination",
+          "type": "IMAGE",
+          "link": 1786,
+          "label": "destination"
+        },
+        {
+          "name": "source",
+          "type": "IMAGE",
+          "link": 626,
+          "label": "source"
+        },
+        {
+          "name": "mask",
+          "type": "MASK",
+          "link": null,
+          "label": "mask"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            1512
+          ],
+          "shape": 3,
+          "slot_index": 0,
+          "label": "IMAGE"
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ImageCompositeMasked"
+      },
+      "widgets_values": [
+        0,
+        128,
+        false
+      ]
+    },
+    {
+      "id": 980,
+      "type": "ReActorRestoreFace",
+      "pos": [
+        -5975.633963343581,
+        385.2136881125497
+      ],
+      "size": {
+        "0": 315,
+        "1": 130
+      },
+      "flags": {},
+      "order": 2,
+      "mode": 4,
+      "inputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ReActorRestoreFace"
+      },
+      "widgets_values": [
+        "retinaface_resnet50",
+        "GFPGANv1.4.pth",
+        1,
+        0.5
+      ]
+    },
+    {
+      "id": 1055,
+      "type": "easy imageToMask",
+      "pos": [
+        -3226,
+        -140
+      ],
+      "size": {
+        "0": 213.45140075683594,
+        "1": 58
+      },
+      "flags": {},
+      "order": 13,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 1704
+        }
+      ],
+      "outputs": [
+        {
+          "name": "MASK",
+          "type": "MASK",
+          "links": [
+            1705
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "easy imageToMask"
+      },
+      "widgets_values": [
+        "red"
+      ]
+    },
+    {
+      "id": 15,
+      "type": "EmptyImage",
+      "pos": [
+        -5951.311109737003,
+        -171.4442407796418
+      ],
+      "size": {
+        "0": 315,
+        "1": 130
+      },
+      "flags": {
+        "collapsed": false
+      },
+      "order": 3,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            626
+          ],
+          "shape": 3,
+          "slot_index": 0,
+          "label": "IMAGE"
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "EmptyImage"
+      },
+      "widgets_values": [
+        256,
+        256,
+        1,
+        0
+      ]
+    },
+    {
+      "id": 124,
+      "type": "SetNode",
+      "pos": [
+        -7534.198355519126,
+        -717.8930995909205
+      ],
+      "size": {
+        "0": 210,
+        "1": 58
+      },
+      "flags": {
+        "collapsed": false
+      },
+      "order": 15,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "VHS_AUDIO",
+          "type": "VHS_AUDIO",
+          "link": 287,
+          "label": "VHS_AUDIO"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "*",
+          "type": "*",
+          "links": null,
+          "label": "*"
+        }
+      ],
+      "title": "Set_audio",
+      "properties": {
+        "previousName": "audio"
+      },
+      "widgets_values": [
+        "audio"
+      ]
+    },
+    {
+      "id": 1056,
+      "type": "MaskToImage",
+      "pos": [
+        -2952,
+        272
+      ],
+      "size": {
+        "0": 210,
+        "1": 26
+      },
+      "flags": {},
+      "order": 24,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "mask",
+          "type": "MASK",
+          "link": 1706
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            1708,
+            1787
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "MaskToImage"
+      }
+    },
+    {
+      "id": 1048,
+      "type": "CR Draw Shape",
+      "pos": [
+        -3597,
+        -170
+      ],
+      "size": {
+        "0": 315,
+        "1": 318
+      },
+      "flags": {},
+      "order": 4,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            1704
+          ],
+          "shape": 3,
+          "slot_index": 0
+        },
+        {
+          "name": "show_help",
+          "type": "STRING",
+          "links": null,
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CR Draw Shape"
+      },
+      "widgets_values": [
+        256,
+        256,
+        "half circle",
+        "white",
+        "custom",
+        0,
+        0,
+        0.98,
+        0,
+        "#000000",
+        "#000000"
+      ]
+    },
+    {
+      "id": 129,
+      "type": "Display Any (rgthree)",
+      "pos": [
+        -6840.198355519126,
+        -480.89309959092043
+      ],
+      "size": {
+        "0": 226.42002868652344,
+        "1": 116.54998779296875
+      },
+      "flags": {},
+      "order": 25,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "source",
+          "type": "*",
+          "link": 297,
+          "dir": 3,
+          "label": "source"
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "Display Any (rgthree)"
+      },
+      "widgets_values": [
+        ""
+      ]
+    },
+    {
+      "id": 1092,
+      "type": "ImageConcanate",
+      "pos": [
+        -1414.0301884973185,
+        783.7210591809077
+      ],
+      "size": {
+        "0": 315,
+        "1": 102
+      },
+      "flags": {},
+      "order": 49,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "image1",
+          "type": "IMAGE",
+          "link": 1826
+        },
+        {
+          "name": "image2",
+          "type": "IMAGE",
+          "link": 1799
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            1806
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ImageConcanate"
+      },
+      "widgets_values": [
+        "right",
+        false
+      ]
+    },
+    {
+      "id": 1094,
+      "type": "GetNode",
+      "pos": [
+        -1384.0301884973185,
+        1034.7210591809078
+      ],
+      "size": {
+        "0": 210,
+        "1": 58
+      },
+      "flags": {
+        "collapsed": false
+      },
+      "order": 5,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "VHS_AUDIO",
+          "type": "VHS_AUDIO",
+          "links": [
+            1801
+          ],
+          "slot_index": 0,
+          "label": "VHS_AUDIO"
+        }
+      ],
+      "title": "Get_audio",
+      "properties": {},
+      "widgets_values": [
+        "audio"
+      ]
+    },
+    {
+      "id": 1108,
+      "type": "MuseTalkPostprocess",
+      "pos": [
+        -2876,
+        788
+      ],
+      "size": {
+        "0": 315,
+        "1": 170
+      },
+      "flags": {},
+      "order": 43,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "origin_images",
+          "type": "IMAGE",
+          "link": 1823
+        },
+        {
+          "name": "musetalk_faces",
+          "type": "IMAGE",
+          "link": 1824
+        },
+        {
+          "name": "uncrop_mask",
+          "type": "IMAGE",
+          "link": 1825
+        }
+      ],
+      "outputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "links": [
+            1826,
+            1827
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "MuseTalkPostprocess"
+      },
+      "widgets_values": [
+        0,
+        0,
+        -5,
+        5
+      ]
+    },
+    {
+      "id": 1051,
+      "type": "PreviewImage",
+      "pos": [
+        -2469,
+        -178
+      ],
+      "size": {
+        "0": 210,
+        "1": 246
+      },
+      "flags": {},
+      "order": 28,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 1708
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "PreviewImage"
+      }
+    },
+    {
+      "id": 122,
+      "type": "muse_talk_sampler",
+      "pos": [
+        -4927.311109737003,
+        -911.4442407796415
+      ],
+      "size": {
+        "0": 315,
+        "1": 162
+      },
+      "flags": {},
+      "order": 40,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 280,
+          "label": "model"
+        },
+        {
+          "name": "vae",
+          "type": "VAE",
+          "link": 279,
+          "slot_index": 1,
+          "label": "vae"
+        },
+        {
+          "name": "whisper_features",
+          "type": "WHISPERFEAT",
+          "link": 281,
+          "slot_index": 2,
+          "label": "whisper_features"
+        },
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 1559,
+          "slot_index": 3,
+          "label": "images"
+        },
+        {
+          "name": "masked_images",
+          "type": "IMAGE",
+          "link": 1512,
+          "slot_index": 4,
+          "label": "masked_images"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "links": [
+            1379,
+            1575,
+            1824
+          ],
+          "shape": 3,
+          "slot_index": 0,
+          "label": "image"
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "muse_talk_sampler"
+      },
+      "widgets_values": [
+        1,
+        0
+      ]
+    },
+    {
+      "id": 735,
+      "type": "Display Any (rgthree)",
+      "pos": [
+        -7238,
+        1339
+      ],
+      "size": {
+        "0": 226.42002868652344,
+        "1": 116.54998779296875
+      },
+      "flags": {},
+      "order": 23,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "source",
+          "type": "*",
+          "link": 1165,
+          "dir": 3,
+          "label": "source"
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "Display Any (rgthree)"
+      },
+      "widgets_values": [
+        ""
+      ]
+    },
+    {
+      "id": 1091,
+      "type": "MuseTalkPostprocess",
+      "pos": [
+        -3011,
+        1271
+      ],
+      "size": {
+        "0": 380.4000244140625,
+        "1": 190
+      },
+      "flags": {},
+      "order": 47,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "origin_images",
+          "type": "IMAGE",
+          "link": 1822
+        },
+        {
+          "name": "musetalk_faces",
+          "type": "IMAGE",
+          "link": 1848
+        },
+        {
+          "name": "uncrop_mask",
+          "type": "IMAGE",
+          "link": 1796
+        }
+      ],
+      "outputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "links": [
+            1797,
+            1799
+          ],
+          "shape": 3,
+          "slot_index": 0
+        },
+        {
+          "name": "uncrop_masks",
+          "type": "IMAGE",
+          "links": null,
+          "shape": 3
+        },
+        {
+          "name": "uncroped_images",
+          "type": "IMAGE",
+          "links": null,
+          "shape": 3
+        },
+        {
+          "name": "face_masks",
+          "type": "IMAGE",
+          "links": null,
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "MuseTalkPostprocess"
+      },
+      "widgets_values": [
+        0,
+        0,
+        -5,
+        5
+      ]
+    },
+    {
+      "id": 1080,
+      "type": "MuseTalkPreprocess",
+      "pos": [
+        -5926,
+        900
+      ],
+      "size": {
+        "0": 354.3999938964844,
+        "1": 174
+      },
+      "flags": {},
+      "order": 31,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "origin_images",
+          "type": "IMAGE",
+          "link": 1775
+        },
+        {
+          "name": "pose_kps",
+          "type": "POSE_KEYPOINT",
+          "link": 1776
+        }
+      ],
+      "outputs": [
+        {
+          "name": "rotated_faces",
+          "type": "IMAGE",
+          "links": [
+            1778,
+            1780,
+            1784
+          ],
+          "shape": 3,
+          "slot_index": 0
+        },
+        {
+          "name": "rotated_faces_with_landmarks",
+          "type": "IMAGE",
+          "links": [
+            1779
+          ],
+          "shape": 3,
+          "slot_index": 1
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "MuseTalkPreprocess"
+      },
+      "widgets_values": [
+        "full",
+        0,
+        8,
+        0,
+        0
+      ]
+    },
+    {
+      "id": 1090,
+      "type": "JWImageResize",
+      "pos": [
+        -4220,
+        459
+      ],
+      "size": {
+        "0": 315,
+        "1": 106
+      },
+      "flags": {},
+      "order": 44,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 1791
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            1792,
+            1848
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "JWImageResize"
+      },
+      "widgets_values": [
+        256,
+        256,
+        "nearest"
+      ]
+    },
+    {
+      "id": 28,
+      "type": "VHS_LoadAudio",
+      "pos": [
+        -8000,
+        -590
+      ],
+      "size": {
+        "0": 315,
+        "1": 82
+      },
+      "flags": {},
+      "order": 6,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "audio",
+          "type": "VHS_AUDIO",
+          "links": [
+            45,
+            287
+          ],
+          "shape": 3,
+          "slot_index": 0,
+          "label": "audio"
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "VHS_LoadAudio"
+      },
+      "widgets_values": {
+        "audio_file": "C:\\Users\\Administrator\\Videos\\视频素材\\xiwang.wav",
+        "seek_seconds": 0
+      }
+    },
+    {
+      "id": 947,
+      "type": "VHS_LoadVideo",
+      "pos": [
+        -8396,
+        870
+      ],
+      "size": [
+        240,
+        643.1111111111111
+      ],
+      "flags": {},
+      "order": 12,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "batch_manager",
+          "type": "VHS_BatchManager",
+          "link": null
+        },
+        {
+          "name": "frame_load_cap",
+          "type": "INT",
+          "link": 1761,
+          "widget": {
+            "name": "frame_load_cap"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            1849
+          ],
+          "shape": 3,
+          "slot_index": 0
+        },
+        {
+          "name": "frame_count",
+          "type": "INT",
+          "links": [
+            1515
+          ],
+          "shape": 3,
+          "slot_index": 1
+        },
+        {
+          "name": "audio",
+          "type": "VHS_AUDIO",
+          "links": null,
+          "shape": 3,
+          "slot_index": 2
+        },
+        {
+          "name": "video_info",
+          "type": "VHS_VIDEOINFO",
+          "links": [
+            1516
+          ],
+          "shape": 3,
+          "slot_index": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "VHS_LoadVideo"
+      },
+      "widgets_values": {
+        "video": "2.mp4",
+        "force_rate": 25,
+        "force_size": "Disabled",
+        "custom_width": 512,
+        "custom_height": 512,
+        "frame_load_cap": 0,
+        "skip_first_frames": 0,
+        "select_every_nth": 1,
+        "choose video to upload": "image",
+        "videopreview": {
+          "hidden": false,
+          "paused": false,
+          "params": {
+            "frame_load_cap": 0,
+            "skip_first_frames": 0,
+            "force_rate": 25,
+            "filename": "2.mp4",
+            "type": "input",
+            "format": "video/mp4",
+            "select_every_nth": 1
+          }
+        }
+      }
+    },
+    {
+      "id": 958,
+      "type": "Reroute",
+      "pos": [
+        -6798,
+        748
+      ],
+      "size": [
+        75,
+        26
+      ],
+      "flags": {},
+      "order": 16,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "",
+          "type": "*",
+          "link": 1849
+        }
+      ],
+      "outputs": [
+        {
+          "name": "",
+          "type": "IMAGE",
+          "links": [
+            1529,
+            1530,
+            1531,
+            1775,
+            1828
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "showOutputText": false,
+        "horizontal": false
+      }
+    },
+    {
+      "id": 97,
+      "type": "Display Any (rgthree)",
+      "pos": [
+        -7762,
+        1341
+      ],
+      "size": {
+        "0": 226.42002868652344,
+        "1": 116.54998779296875
+      },
+      "flags": {},
+      "order": 17,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "source",
+          "type": "*",
+          "link": 1515,
+          "dir": 3,
+          "label": "source"
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "Display Any (rgthree)"
+      },
+      "widgets_values": [
+        ""
+      ]
+    },
+    {
+      "id": 734,
+      "type": "VHS_VideoInfo",
+      "pos": [
+        -7816,
+        1039
+      ],
+      "size": {
+        "0": 393,
+        "1": 206
+      },
+      "flags": {},
+      "order": 18,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "video_info",
+          "type": "VHS_VIDEOINFO",
+          "link": 1516
+        }
+      ],
+      "outputs": [
+        {
+          "name": "source_fps🟨",
+          "type": "FLOAT",
+          "links": [
+            1165
+          ],
+          "shape": 3,
+          "slot_index": 0
+        },
+        {
+          "name": "source_frame_count🟨",
+          "type": "INT",
+          "links": null,
+          "shape": 3
+        },
+        {
+          "name": "source_duration🟨",
+          "type": "FLOAT",
+          "links": null,
+          "shape": 3
+        },
+        {
+          "name": "source_width🟨",
+          "type": "INT",
+          "links": null,
+          "shape": 3
+        },
+        {
+          "name": "source_height🟨",
+          "type": "INT",
+          "links": null,
+          "shape": 3
+        },
+        {
+          "name": "loaded_fps🟦",
+          "type": "FLOAT",
+          "links": null,
+          "shape": 3
+        },
+        {
+          "name": "loaded_frame_count🟦",
+          "type": "INT",
+          "links": null,
+          "shape": 3
+        },
+        {
+          "name": "loaded_duration🟦",
+          "type": "FLOAT",
+          "links": null,
+          "shape": 3
+        },
+        {
+          "name": "loaded_width🟦",
+          "type": "INT",
+          "links": null,
+          "shape": 3
+        },
+        {
+          "name": "loaded_height🟦",
+          "type": "INT",
+          "links": null,
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "VHS_VideoInfo"
+      },
+      "widgets_values": {}
+    },
+    {
+      "id": 4,
+      "type": "VAELoader",
+      "pos": [
+        -5971.280013365008,
+        -734.1600439000975
+      ],
+      "size": {
+        "0": 389.75921630859375,
+        "1": 58
+      },
+      "flags": {},
+      "order": 7,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "VAE",
+          "type": "VAE",
+          "links": [
+            279
+          ],
+          "shape": 3,
+          "slot_index": 0,
+          "label": "VAE"
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "VAELoader"
+      },
+      "widgets_values": [
+        "vae-ft-mse-840000-ema-pruned.safetensors"
+      ]
+    },
+    {
+      "id": 121,
+      "type": "UNETLoader_MuseTalk",
+      "pos": [
+        -5884.311109737003,
+        -986.4442407796415
+      ],
+      "size": {
+        "0": 214.1832275390625,
+        "1": 58
+      },
+      "flags": {},
+      "order": 8,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "MODEL",
+          "type": "MODEL",
+          "links": [
+            280
+          ],
+          "shape": 3,
+          "slot_index": 0,
+          "label": "MODEL"
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "UNETLoader_MuseTalk"
+      },
+      "widgets_values": [
+        "pytorch_model.bin"
+      ]
+    },
+    {
+      "id": 979,
+      "type": "JWImageResize",
+      "pos": [
+        -6410,
+        316
+      ],
+      "size": {
+        "0": 315,
+        "1": 106
+      },
+      "flags": {},
+      "order": 37,
+      "mode": 4,
+      "inputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 1587
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            1790
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "JWImageResize"
+      },
+      "widgets_values": [
+        256,
+        256,
+        "nearest"
+      ]
+    },
+    {
+      "id": 866,
+      "type": "FaceEnhancement",
+      "pos": [
+        -4240,
+        310
+      ],
+      "size": {
+        "0": 300.08770751953125,
+        "1": 73.68206024169922
+      },
+      "flags": {},
+      "order": 42,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 1575
+        }
+      ],
+      "outputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "links": [
+            1791
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "FaceEnhancement"
+      }
+    },
+    {
+      "id": 911,
+      "type": "GetNode",
+      "pos": [
+        -2844,
+        1067
+      ],
+      "size": {
+        "0": 210,
+        "1": 58
+      },
+      "flags": {
+        "collapsed": false
+      },
+      "order": 9,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "VHS_AUDIO",
+          "type": "VHS_AUDIO",
+          "links": [
+            1460,
+            1570
+          ],
+          "slot_index": 0,
+          "label": "VHS_AUDIO"
+        }
+      ],
+      "title": "Get_audio",
+      "properties": {},
+      "widgets_values": [
+        "audio"
+      ]
+    },
+    {
+      "id": 236,
+      "type": "INTConstant",
+      "pos": [
+        -8753,
+        1060
+      ],
+      "size": {
+        "0": 224.5601348876953,
+        "1": 58
+      },
+      "flags": {
+        "collapsed": false
+      },
+      "order": 10,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "value",
+          "type": "INT",
+          "links": [],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "INTConstant"
+      },
+      "widgets_values": [
+        100
+      ],
+      "color": "#1b4669",
+      "bgcolor": "#29699c"
+    },
+    {
+      "id": 1084,
+      "type": "Reroute",
+      "pos": [
+        -3254,
+        496
+      ],
+      "size": [
+        75,
+        26
+      ],
+      "flags": {},
+      "order": 29,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "",
+          "type": "*",
+          "link": 1787
+        }
+      ],
+      "outputs": [
+        {
+          "name": "",
+          "type": "IMAGE",
+          "links": [
+            1796,
+            1825
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "showOutputText": false,
+        "horizontal": false
+      }
+    },
+    {
+      "id": 913,
+      "type": "GetNode",
+      "pos": [
+        -4285,
+        938
+      ],
+      "size": {
+        "0": 210,
+        "1": 58
+      },
+      "flags": {
+        "collapsed": false
+      },
+      "order": 11,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "VHS_AUDIO",
+          "type": "VHS_AUDIO",
+          "links": [
+            1462
+          ],
+          "slot_index": 0,
+          "label": "VHS_AUDIO"
+        }
+      ],
+      "title": "Get_audio",
+      "properties": {},
+      "widgets_values": [
+        "audio"
+      ]
+    },
+    {
+      "id": 1107,
+      "type": "Reroute",
+      "pos": [
+        -3847,
+        1582
+      ],
+      "size": [
+        75,
+        26
+      ],
+      "flags": {},
+      "order": 22,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "",
+          "type": "*",
+          "link": 1828
+        }
+      ],
+      "outputs": [
+        {
+          "name": "",
+          "type": "IMAGE",
+          "links": [
+            1822,
+            1823
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "showOutputText": false,
+        "horizontal": false
+      }
+    },
+    {
+      "id": 912,
+      "type": "VHS_VideoCombine",
+      "pos": [
+        -3994,
+        840
+      ],
+      "size": [
+        320,
+        290
+      ],
+      "flags": {},
+      "order": 46,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 1792
+        },
+        {
+          "name": "audio",
+          "type": "VHS_AUDIO",
+          "link": 1462
+        },
+        {
+          "name": "batch_manager",
+          "type": "VHS_BatchManager",
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "Filenames",
+          "type": "VHS_FILENAMES",
+          "links": null,
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "VHS_VideoCombine"
+      },
+      "widgets_values": {
+        "frame_rate": 25,
+        "loop_count": 0,
+        "filename_prefix": "AnimateDiff",
+        "format": "video/h264-mp4",
+        "pix_fmt": "yuv420p",
+        "crf": 19,
+        "save_metadata": false,
+        "pingpong": false,
+        "save_output": false,
+        "videopreview": {
+          "hidden": false,
+          "paused": false,
+          "params": {
+            "filename": "AnimateDiff_00004-audio.mp4",
+            "subfolder": "",
+            "type": "temp",
+            "format": "video/h264-mp4"
+          }
+        }
+      }
+    },
+    {
+      "id": 1054,
+      "type": "GrowMaskWithBlur",
+      "pos": [
+        -2952,
+        -205
+      ],
+      "size": {
+        "0": 315,
+        "1": 246
+      },
+      "flags": {},
+      "order": 19,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "mask",
+          "type": "MASK",
+          "link": 1705
+        }
+      ],
+      "outputs": [
+        {
+          "name": "mask",
+          "type": "MASK",
+          "links": [
+            1706
+          ],
+          "shape": 3,
+          "slot_index": 0
+        },
+        {
+          "name": "mask_inverted",
+          "type": "MASK",
+          "links": null,
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "GrowMaskWithBlur"
+      },
+      "widgets_values": [
+        -5,
+        0,
+        true,
+        false,
+        2,
+        1,
+        1,
+        false
+      ]
+    },
+    {
+      "id": 971,
+      "type": "ImageFilterGaussianBlur",
+      "size": {
+        "0": 315,
+        "1": 82
+      },
+      "flags": {},
+      "mode": 4,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 1780
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            1558,
+            1559
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ImageFilterGaussianBlur"
+      },
+      "widgets_values": [
+        10,
+        10
+      ],
+      "order": 34,
+      "pos": [
+        -5311,
+        410
+      ]
+    },
+    {
+      "id": 833,
+      "type": "VHS_VideoCombine",
+      "pos": [
+        -5418,
+        1001
+      ],
+      "size": [
+        320,
+        290
+      ],
+      "flags": {},
+      "order": 35,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 1779
+        },
+        {
+          "name": "audio",
+          "type": "VHS_AUDIO",
+          "link": null
+        },
+        {
+          "name": "batch_manager",
+          "type": "VHS_BatchManager",
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "Filenames",
+          "type": "VHS_FILENAMES",
+          "links": null,
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "VHS_VideoCombine"
+      },
+      "widgets_values": {
+        "frame_rate": 25,
+        "loop_count": 0,
+        "filename_prefix": "musetalk",
+        "format": "video/h264-mp4",
+        "pix_fmt": "yuv420p",
+        "crf": 19,
+        "save_metadata": false,
+        "pingpong": false,
+        "save_output": false,
+        "videopreview": {
+          "hidden": false,
+          "paused": false,
+          "params": {
+            "filename": "AnimateDiff_00001.mp4",
+            "subfolder": "",
+            "type": "temp",
+            "format": "video/h264-mp4"
+          }
+        }
+      }
+    },
+    {
+      "id": 844,
+      "type": "VHS_VideoCombine",
+      "pos": [
+        -4933,
+        1001
+      ],
+      "size": [
+        320,
+        290
+      ],
+      "flags": {},
+      "order": 32,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 1778
+        },
+        {
+          "name": "audio",
+          "type": "VHS_AUDIO",
+          "link": null
+        },
+        {
+          "name": "batch_manager",
+          "type": "VHS_BatchManager",
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "Filenames",
+          "type": "VHS_FILENAMES",
+          "links": null,
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "VHS_VideoCombine"
+      },
+      "widgets_values": {
+        "frame_rate": 25,
+        "loop_count": 0,
+        "filename_prefix": "musetalk",
+        "format": "video/h264-mp4",
+        "pix_fmt": "yuv420p",
+        "crf": 19,
+        "save_metadata": false,
+        "pingpong": false,
+        "save_output": false,
+        "videopreview": {
+          "hidden": false,
+          "paused": false,
+          "params": {
+            "filename": "AnimateDiff_00002.mp4",
+            "subfolder": "",
+            "type": "temp",
+            "format": "video/h264-mp4"
+          }
+        }
+      }
+    },
+    {
+      "id": 970,
+      "type": "VHS_VideoCombine",
+      "pos": [
+        -4794.311109737003,
+        -480.4442407796421
+      ],
+      "size": [
+        320,
+        290
+      ],
+      "flags": {},
+      "order": 36,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 1558
+        },
+        {
+          "name": "audio",
+          "type": "VHS_AUDIO",
+          "link": null
+        },
+        {
+          "name": "batch_manager",
+          "type": "VHS_BatchManager",
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "Filenames",
+          "type": "VHS_FILENAMES",
+          "links": null,
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "VHS_VideoCombine"
+      },
+      "widgets_values": {
+        "frame_rate": 25,
+        "loop_count": 0,
+        "filename_prefix": "musetalk",
+        "format": "video/h264-mp4",
+        "pix_fmt": "yuv420p",
+        "crf": 19,
+        "save_metadata": false,
+        "pingpong": false,
+        "save_output": false,
+        "videopreview": {
+          "hidden": false,
+          "paused": false,
+          "params": {
+            "filename": "AnimateDiff_00003.mp4",
+            "subfolder": "",
+            "type": "temp",
+            "format": "video/h264-mp4"
+          }
+        }
+      }
+    },
+    {
+      "id": 842,
+      "type": "VHS_VideoCombine",
+      "pos": [
+        -4134.311109737003,
+        -941.4442407796415
+      ],
+      "size": [
+        320,
+        604
+      ],
+      "flags": {},
+      "order": 41,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 1379
+        },
+        {
+          "name": "audio",
+          "type": "VHS_AUDIO",
+          "link": 1380
+        },
+        {
+          "name": "batch_manager",
+          "type": "VHS_BatchManager",
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "Filenames",
+          "type": "VHS_FILENAMES",
+          "links": null,
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "VHS_VideoCombine"
+      },
+      "widgets_values": {
+        "frame_rate": 25,
+        "loop_count": 0,
+        "filename_prefix": "musetalk",
+        "format": "video/h264-mp4",
+        "pix_fmt": "yuv420p",
+        "crf": 19,
+        "save_metadata": false,
+        "pingpong": false,
+        "save_output": true,
+        "videopreview": {
+          "hidden": false,
+          "paused": false,
+          "params": {
+            "filename": "AnimateDiff_00021-audio.mp4",
+            "subfolder": "",
+            "type": "output",
+            "format": "video/h264-mp4"
+          }
+        }
+      }
+    },
+    {
+      "id": 867,
+      "type": "VHS_VideoCombine",
+      "pos": [
+        -1978,
+        924
+      ],
+      "size": [
+        320,
+        290
+      ],
+      "flags": {},
+      "order": 45,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 1827
+        },
+        {
+          "name": "audio",
+          "type": "VHS_AUDIO",
+          "link": 1460
+        },
+        {
+          "name": "batch_manager",
+          "type": "VHS_BatchManager",
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "Filenames",
+          "type": "VHS_FILENAMES",
+          "links": null,
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "VHS_VideoCombine"
+      },
+      "widgets_values": {
+        "frame_rate": 25,
+        "loop_count": 0,
+        "filename_prefix": "musetalk",
+        "format": "video/h264-mp4",
+        "pix_fmt": "yuv420p",
+        "crf": 19,
+        "save_metadata": false,
+        "pingpong": false,
+        "save_output": false,
+        "videopreview": {
+          "hidden": false,
+          "paused": false,
+          "params": {
+            "filename": "AnimateDiff_00005-audio.mp4",
+            "subfolder": "",
+            "type": "temp",
+            "format": "video/h264-mp4"
+          }
+        }
+      }
+    },
+    {
+      "id": 973,
+      "type": "VHS_VideoCombine",
+      "pos": [
+        -2420,
+        1279
+      ],
+      "size": [
+        320,
+        290
+      ],
+      "flags": {},
+      "order": 48,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 1797
+        },
+        {
+          "name": "audio",
+          "type": "VHS_AUDIO",
+          "link": 1570
+        },
+        {
+          "name": "batch_manager",
+          "type": "VHS_BatchManager",
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "Filenames",
+          "type": "VHS_FILENAMES",
+          "links": null,
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "VHS_VideoCombine"
+      },
+      "widgets_values": {
+        "frame_rate": 25,
+        "loop_count": 0,
+        "filename_prefix": "musetalk",
+        "format": "video/h264-mp4",
+        "pix_fmt": "yuv420p",
+        "crf": 19,
+        "save_metadata": false,
+        "pingpong": false,
+        "save_output": false,
+        "videopreview": {
+          "hidden": false,
+          "paused": false,
+          "params": {
+            "filename": "AnimateDiff_00006-audio.mp4",
+            "subfolder": "",
+            "type": "temp",
+            "format": "video/h264-mp4"
+          }
+        }
+      }
+    },
+    {
+      "id": 1093,
+      "type": "VHS_VideoCombine",
+      "pos": [
+        -948,
+        754
+      ],
+      "size": [
+        418.9444885253906,
+        290
+      ],
+      "flags": {},
+      "order": 50,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 1806
+        },
+        {
+          "name": "audio",
+          "type": "VHS_AUDIO",
+          "link": 1801
+        },
+        {
+          "name": "batch_manager",
+          "type": "VHS_BatchManager",
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "Filenames",
+          "type": "VHS_FILENAMES",
+          "links": null,
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "VHS_VideoCombine"
+      },
+      "widgets_values": {
+        "frame_rate": 25,
+        "loop_count": 0,
+        "filename_prefix": "musetalk",
+        "format": "video/h264-mp4",
+        "pix_fmt": "yuv420p",
+        "crf": 19,
+        "save_metadata": false,
+        "pingpong": false,
+        "save_output": false,
+        "videopreview": {
+          "hidden": false,
+          "paused": false,
+          "params": {
+            "filename": "AnimateDiff_00007-audio.mp4",
+            "subfolder": "",
+            "type": "temp",
+            "format": "video/h264-mp4"
+          }
+        }
+      }
+    },
+    {
+      "id": 976,
+      "type": "FaceEnhancement",
+      "pos": [
+        -6383,
+        488
+      ],
+      "size": {
+        "0": 300.08770751953125,
+        "1": 73.68206024169922
+      },
+      "flags": {},
+      "order": 34,
+      "mode": 4,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 1784
+        }
+      ],
+      "outputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "links": [
+            1587
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "FaceEnhancement"
+      }
+    }
+  ],
+  "links": [
+    [
+      45,
+      28,
+      0,
+      27,
+      0,
+      "VHS_AUDIO"
+    ],
+    [
+      67,
+      27,
+      0,
+      36,
+      0,
+      "VCAUDIOTENSOR"
+    ],
+    [
+      279,
+      4,
+      0,
+      122,
+      1,
+      "VAE"
+    ],
+    [
+      280,
+      121,
+      0,
+      122,
+      0,
+      "MODEL"
+    ],
+    [
+      281,
+      36,
+      0,
+      122,
+      2,
+      "WHISPERFEAT"
+    ],
+    [
+      287,
+      28,
+      0,
+      124,
+      0,
+      "*"
+    ],
+    [
+      297,
+      36,
+      1,
+      129,
+      0,
+      "*"
+    ],
+    [
+      422,
+      36,
+      1,
+      223,
+      0,
+      "*"
+    ],
+    [
+      626,
+      15,
+      0,
+      16,
+      1,
+      "IMAGE"
+    ],
+    [
+      871,
+      529,
+      0,
+      527,
+      1,
+      "INT"
+    ],
+    [
+      872,
+      529,
+      1,
+      527,
+      2,
+      "INT"
+    ],
+    [
+      873,
+      527,
+      0,
+      526,
+      1,
+      "INT"
+    ],
+    [
+      1165,
+      734,
+      0,
+      735,
+      0,
+      "*"
+    ],
+    [
+      1379,
+      122,
+      0,
+      842,
+      0,
+      "IMAGE"
+    ],
+    [
+      1380,
+      125,
+      0,
+      842,
+      1,
+      "VHS_AUDIO"
+    ],
+    [
+      1460,
+      911,
+      0,
+      867,
+      1,
+      "VHS_AUDIO"
+    ],
+    [
+      1462,
+      913,
+      0,
+      912,
+      1,
+      "VHS_AUDIO"
+    ],
+    [
+      1512,
+      16,
+      0,
+      122,
+      4,
+      "IMAGE"
+    ],
+    [
+      1515,
+      947,
+      1,
+      97,
+      0,
+      "*"
+    ],
+    [
+      1516,
+      947,
+      3,
+      734,
+      0,
+      "VHS_VIDEOINFO"
+    ],
+    [
+      1529,
+      958,
+      0,
+      526,
+      0,
+      "IMAGE"
+    ],
+    [
+      1530,
+      958,
+      0,
+      529,
+      0,
+      "IMAGE"
+    ],
+    [
+      1531,
+      958,
+      0,
+      527,
+      0,
+      "IMAGE"
+    ],
+    [
+      1558,
+      971,
+      0,
+      970,
+      0,
+      "IMAGE"
+    ],
+    [
+      1559,
+      971,
+      0,
+      122,
+      3,
+      "IMAGE"
+    ],
+    [
+      1570,
+      911,
+      0,
+      973,
+      1,
+      "VHS_AUDIO"
+    ],
+    [
+      1575,
+      122,
+      0,
+      866,
+      0,
+      "IMAGE"
+    ],
+    [
+      1587,
+      976,
+      0,
+      979,
+      0,
+      "IMAGE"
+    ],
+    [
+      1704,
+      1048,
+      0,
+      1055,
+      0,
+      "IMAGE"
+    ],
+    [
+      1705,
+      1055,
+      0,
+      1054,
+      0,
+      "MASK"
+    ],
+    [
+      1706,
+      1054,
+      0,
+      1056,
+      0,
+      "MASK"
+    ],
+    [
+      1708,
+      1056,
+      0,
+      1051,
+      0,
+      "IMAGE"
+    ],
+    [
+      1761,
+      224,
+      0,
+      947,
+      1,
+      "INT"
+    ],
+    [
+      1775,
+      958,
+      0,
+      1080,
+      0,
+      "IMAGE"
+    ],
+    [
+      1776,
+      526,
+      1,
+      1080,
+      1,
+      "POSE_KEYPOINT"
+    ],
+    [
+      1778,
+      1080,
+      0,
+      844,
+      0,
+      "IMAGE"
+    ],
+    [
+      1779,
+      1080,
+      1,
+      833,
+      0,
+      "IMAGE"
+    ],
+    [
+      1780,
+      1080,
+      0,
+      971,
+      0,
+      "IMAGE"
+    ],
+    [
+      1784,
+      1080,
+      0,
+      976,
+      0,
+      "IMAGE"
+    ],
+    [
+      1786,
+      1083,
+      0,
+      16,
+      0,
+      "IMAGE"
+    ],
+    [
+      1787,
+      1056,
+      0,
+      1084,
+      0,
+      "*"
+    ],
+    [
+      1790,
+      979,
+      0,
+      1083,
+      0,
+      "*"
+    ],
+    [
+      1791,
+      866,
+      0,
+      1090,
+      0,
+      "IMAGE"
+    ],
+    [
+      1792,
+      1090,
+      0,
+      912,
+      0,
+      "IMAGE"
+    ],
+    [
+      1796,
+      1084,
+      0,
+      1091,
+      2,
+      "IMAGE"
+    ],
+    [
+      1797,
+      1091,
+      0,
+      973,
+      0,
+      "IMAGE"
+    ],
+    [
+      1799,
+      1091,
+      0,
+      1092,
+      1,
+      "IMAGE"
+    ],
+    [
+      1801,
+      1094,
+      0,
+      1093,
+      1,
+      "VHS_AUDIO"
+    ],
+    [
+      1806,
+      1092,
+      0,
+      1093,
+      0,
+      "IMAGE"
+    ],
+    [
+      1822,
+      1107,
+      0,
+      1091,
+      0,
+      "IMAGE"
+    ],
+    [
+      1823,
+      1107,
+      0,
+      1108,
+      0,
+      "IMAGE"
+    ],
+    [
+      1824,
+      122,
+      0,
+      1108,
+      1,
+      "IMAGE"
+    ],
+    [
+      1825,
+      1084,
+      0,
+      1108,
+      2,
+      "IMAGE"
+    ],
+    [
+      1826,
+      1108,
+      0,
+      1092,
+      0,
+      "IMAGE"
+    ],
+    [
+      1827,
+      1108,
+      0,
+      867,
+      0,
+      "IMAGE"
+    ],
+    [
+      1828,
+      958,
+      0,
+      1107,
+      0,
+      "*"
+    ],
+    [
+      1848,
+      1090,
+      0,
+      1091,
+      1,
+      "IMAGE"
+    ],
+    [
+      1849,
+      947,
+      0,
+      958,
+      0,
+      "*"
+    ]
+  ],
+  "groups": [
+    {
+      "title": "loadvideo",
+      "bounding": [
+        -8845,
+        639,
+        1883,
+        1047
+      ],
+      "color": "#3f789e",
+      "font_size": 24,
+      "locked": false
+    },
+    {
+      "title": "load audio and cal video frame",
+      "bounding": [
+        -8064,
+        -883,
+        1878,
+        675
+      ],
+      "color": "#3f789e",
+      "font_size": 24,
+      "locked": false
+    },
+    {
+      "title": "musetalk sampler",
+      "bounding": [
+        -6125,
+        -1096,
+        2378,
+        1226
+      ],
+      "color": "#3f789e",
+      "font_size": 24,
+      "locked": false
+    },
+    {
+      "title": "preprocess and crop",
+      "bounding": [
+        -6917,
+        650,
+        2505,
+        1051
+      ],
+      "color": "#3f789e",
+      "font_size": 24,
+      "locked": false
+    },
+    {
+      "title": "postprocess and uncrop",
+      "bounding": [
+        -4369,
+        619,
+        2815,
+        1523
+      ],
+      "color": "#3f789e",
+      "font_size": 24,
+      "locked": false
+    },
+    {
+      "title": "uncrop face mask",
+      "bounding": [
+        -3651,
+        -332,
+        1440,
+        917
+      ],
+      "color": "#3f789e",
+      "font_size": 24,
+      "locked": false
+    },
+    {
+      "title": "hires",
+      "bounding": [
+        -6520,
+        220,
+        1033,
+        387
+      ],
+      "color": "#3f789e",
+      "font_size": 24,
+      "locked": false
+    },
+    {
+      "title": "blur",
+      "bounding": [
+        -5448,
+        217,
+        916,
+        396
+      ],
+      "color": "#3f789e",
+      "font_size": 24,
+      "locked": false
+    },
+    {
+      "title": "hires",
+      "bounding": [
+        -4374,
+        227,
+        631,
+        364
+      ],
+      "color": "#3f789e",
+      "font_size": 24,
+      "locked": false
+    },
+    {
+      "title": "diff",
+      "bounding": [
+        -1514,
+        613,
+        1121,
+        1519
+      ],
+      "color": "#3f789e",
+      "font_size": 24,
+      "locked": false
+    }
+  ],
+  "config": {},
+  "extra": {
+    "workspace_info": {
+      "id": "Ar3D9He4S5MoHhCb_zi9p"
+    }
+  },
+  "version": 0.4
+}
