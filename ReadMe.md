@@ -13,7 +13,7 @@
 1. open musetalk flow and upload video(or image)
 2. set audio path(wav or mp3 ...)
 3. run the flow
-4. video tutorial: 
+4. video tutorial: https://www.bilibili.com/video/BV1ni421X7ok/?share_source=copy_web&vd_source=43ee8c0ef3a0b12097f69db4423c1332
 
 5. GPU < 5G can run
 
